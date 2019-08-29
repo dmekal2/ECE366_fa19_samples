@@ -35,6 +35,14 @@ Goal: a simple Python program sample, which disassemble one line (via input) a H
  
  bye!
  
+ 
+ ## TA's version:
+ The disassembler is written in Python3.0 , to run it :
+ '''bash
+ python3 disassembler.py
+ '''
+ 
+ 
 
  
 
