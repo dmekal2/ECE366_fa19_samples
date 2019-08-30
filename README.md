@@ -40,7 +40,7 @@ Goal: a simple Python program sample, which disassemble one line (via input) a H
  The disassembler is written in Python3.0 , to run it :   
  
 ```bash
-python3 disassembler.py
+python3 disassembler_TrungLe.py
 ```
  
  
