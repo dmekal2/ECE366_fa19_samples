@@ -1,6 +1,6 @@
 #MIPS byline expandable disassembler
 #Author: Eric Bauer
-
+import numpy as np
 
 
 def hexdecode(char):
@@ -55,7 +55,28 @@ class decoder:
             print(commhex)
             print(bin(commbin))
             print(commbin)
-         
+            types = commbin>>26
+            
+            if types==0:
+                #r-type
+                self.rtype(commbin)
+            elif types > 3:
+                #i-type
+                self.itype(commbin)
+            else:
+                print('Not a supported command.')
+
+    def rtype(self,command):
+        rs = 0x1f & (command >> 21)
+        rt = 0x1f & (command >> 16)
+        rd = 0x1f & (command >> 11)
+        sh = 0x1f & (command >> 6)
+        
+    def itype(self,command):
+        opcode= 0x3f & (command >> 26)
+        rs = 0x1f & (command >> 21)
+        rt = 0x1f & (command >> 16)
+        imm = np.int16(0xffff & command)
 
     
 object1=decoder()
