@@ -71,12 +71,26 @@ class decoder:
         rt = 0x1f & (command >> 16)
         rd = 0x1f & (command >> 11)
         sh = 0x1f & (command >> 6)
-        
+        func = 0x3f & command
+
+        if func == 0x20:#add
+            print('add ${},${},${}'.format(rd,rs,rt))
+            self.reg[rd]=self.reg[rs]+self.reg[rt]
+        else:
+            print('Not a supported command.')
+
+
     def itype(self,command):
         opcode= 0x3f & (command >> 26)
         rs = 0x1f & (command >> 21)
         rt = 0x1f & (command >> 16)
         imm = np.int16(0xffff & command)
+
+        if opcode == 8:#addi 
+            print('addi ${},${},{}'.format(rt,rs,imm))
+        else:
+            print('Not a supported command.')
+            
 
     
 object1=decoder()
