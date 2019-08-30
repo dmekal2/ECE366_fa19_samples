@@ -38,6 +38,7 @@ class decoder:
         while(1):
             commbin=0
             commhex=input("Please enter an 8-digit hex command  (or'exit' to quit)\n")
+            commhex= commhex.lower()
             if commhex =='exit' or commhex=='quit':
                 print('Goodbye.')
                 break
@@ -48,13 +49,8 @@ class decoder:
             for x in range(8):
                 val=hexdecode(commhex[7-x])
                 if str(val)==val:
-                    print('whoops')
-                    print(val)
                     break
                 commbin+= pow(16,x)*val
-            print(commhex)
-            print(bin(commbin))
-            print(commbin)
             types = commbin>>26
             
             if types==0:
