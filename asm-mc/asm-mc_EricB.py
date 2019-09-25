@@ -1,4 +1,11 @@
 #Assembly encoder by Eric Bauer
+
+###Please use TrungLe's code for HW4 ###
+#When writing this code I did not know support for tags was needed,
+#this code does NOT support tags, and TrungLe's does
+##I apologize for the error.
+
+
 #Supports add, addi, and jump instructions
 #Currently only supports immediates written in decimal.
 import numpy as np
